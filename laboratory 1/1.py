@@ -17,9 +17,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [fspl_linear_scale(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [fspl_linear_scale(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [fspl_linear_scale(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("FSPL (линейная шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("FSPL")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -29,9 +29,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [fspl_log_scale(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [fspl_log_scale(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [fspl_log_scale(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("FSPL (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("FSPL")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -81,9 +81,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [UMA_LOS(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [UMA_LOS(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [UMA_LOS(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("UMA_LOS (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("UMA_LOS")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -103,9 +103,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [UMA_NLOS(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [UMA_NLOS(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [UMA_NLOS(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("UMA_NLOS (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("UMA_NLOS")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -121,9 +121,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [InH_LOS(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [InH_LOS(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [InH_LOS(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("InH_LOS (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("InH_LOS")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -142,9 +142,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [InH_NLOS(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [InH_NLOS(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [InH_NLOS(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("InH_NLOS (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("InH_NLOS")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
@@ -163,9 +163,9 @@ plt.figure(figsize=(10,8))
 plt.plot(distances, [InH_NLOS_alt(i, f1) for i in distances], label='При f = 900 МГц')
 plt.plot(distances, [InH_NLOS_alt(i, f2) for i in distances], label='При f = 1.9 ГГц')
 plt.plot(distances, [InH_NLOS_alt(i, f3) for i in distances], label='При f = 28 ГГц')
-plt.title("InH_NLOS_alt (логарифмическая шкала)")
-plt.xlabel("Расстояние в метрах")
-plt.ylabel("InH_NLOS_alt")
+plt.title
+plt.xlabel
+plt.ylabel
 plt.xlim(xmin=distances[0], xmax=distances[-1])
 plt.legend()
 plt.show()
