@@ -4,30 +4,30 @@ from scipy.constants import speed_of_light as c
 import matplotlib.pyplot as plt
 
 def logarythm(value):
-    # из линейного в лог
+    # из линейного в логарифм
     return 10 * np.log10(value)
 
 def linear(value):
-    # из лог в линейное
+    # из логарифма в линейное
     return np.power(10, value / 10)
 
 def fspl(d, f, h_bs, h_ut):
-    loss = np.power((4*np.pi*d*f)/c, 2) # в линейном
-    loss = logarythm(loss) # по дефолту переводим в логарифм, но если будет нужно, можем и лин взять
+    loss = np.power((4*np.pi*d*f)/c, 2)
+    loss = logarythm(loss)
     return loss
 
 def prd(G_r, G_t, P_t, d, f, N_0, B, loss=fspl,  h_bs=None, h_ut=None):
-    power_on_reciever = logarythm(linear(P_t) * G_t * G_r) - loss(d, f, h_bs, h_ut) # приемник, для будущего отсечения по -70
-    snr = power_on_reciever - logarythm(B*linear(N_0)) # собственно, получаемая мощность
+    power_on_reciever = logarythm(linear(P_t) * G_t * G_r) - loss(d, f, h_bs, h_ut)
+    snr = power_on_reciever - logarythm(B*linear(N_0))
     return power_on_reciever, snr
-# значения из условия
 
-f = np.array([900*(10**6), 1.9*(10**9), 28*(10**9)]) # частоты
-d = np.linspace(0.1, 10000, 100*100) # расстояние от 0.1 метра до 1 километра
-P_t = 23 # мощность в дБм передатчика
-G_t, G_r = 10, 10 # усиление дБ на приеме и передаче
-N_0 = -174 # тепловой шум в дБм
-B = 20*(10**6) # полоса частот
+# значения из условия
+f = np.array([900*(10**6), 1.9*(10**9), 28*(10**9)])
+d = np.linspace(0.1, 10000, 100*100)
+P_t = 23
+G_t, G_r = 10, 10
+N_0 = -174
+B = 20*(10**6)
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
 pwr_1900, snr_1900 = prd(G_r, G_t, P_t, d, f[1], N_0, B)
@@ -104,11 +104,11 @@ plt.ylabel('snr')
 plt.legend()
 plt.show()
 
-P_t = 30  # мощность в дБм передатчика
-G_t, G_r = 10, 10  # усиление дБ на приеме и передаче
-N_0 = -174  # тепловой шум в дБм
-B = 20 * (10 ** 6)  # полоса частот
-d = np.linspace(0.1, 10000, 100 * 100)  # расстояние от 0.1 метра до 1 километра
+P_t = 30
+G_t, G_r = 10, 10
+N_0 = -174
+B = 20 * (10 ** 6)
+d = np.linspace(0.1, 10000, 100 * 100)
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
 pwr_1900, snr_1900 = prd(G_r, G_t, P_t, d, f[1], N_0, B)
@@ -145,11 +145,11 @@ plt.ylabel('snr')
 plt.legend()
 plt.show()
 
-P_t = 23  # мощность в дБм передатчика
-G_t, G_r = 30, 18  # усиление дБ на приеме и передаче
-N_0 = -174  # тепловой шум в дБм
-B = 20 * (10 ** 6)  # полоса частот
-d = np.linspace(0.1, 10000, 100 * 100)  # расстояние от 0.1 метра до 1 километра
+P_t = 23
+G_t, G_r = 30, 18
+N_0 = -174
+B = 20 * (10 ** 6)
+d = np.linspace(0.1, 10000, 100 * 100)
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
 pwr_1900, snr_1900 = prd(G_r, G_t, P_t, d, f[1], N_0, B)
@@ -189,11 +189,11 @@ plt.show()
 def shennon_speed(snr, B):
     return B*np.log2(1 + snr)
 
-P_t = 23 # мощность в дБм передатчика
-G_t, G_r = 10, 10 # усиление дБ на приеме и передаче
-N_0 = -174 # тепловой шум в дБм
-B = 20*(10**6) # полоса частот
-d = np.linspace(0.1, 10000, 100*100) # расстояние от 0.1 метра до 1 километра
+P_t = 23
+G_t, G_r = 10, 10
+N_0 = -174
+B = 20*(10**6)
+d = np.linspace(0.1, 10000, 100*100)
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
 pwr_1900, snr_1900 = prd(G_r, G_t, P_t, d, f[1], N_0, B)
@@ -212,10 +212,10 @@ plt.ylabel('shennon_speed')
 plt.legend()
 plt.show()
 
-P_t = np.linspace(10, 50, 100) # мощность в дБм передатчика
-G_t, G_r = 10, 10 # усиление дБ на приеме и передаче
-N_0 = -174 # тепловой шум в дБм
-B = 20*(10**6) # полоса частот
+P_t = np.linspace(10, 50, 100)
+G_t, G_r = 10, 10
+N_0 = -174
+B = 20*(10**6)
 d = 500
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
@@ -237,8 +237,8 @@ plt.show()
 
 P_t = 23 # мощность в дБм передатчика
 G_t, G_r = np.linspace(5, 30, 50), 10 # усиление дБ на приеме и передаче
-N_0 = -174 # тепловой шум в дБм
-B = 20*(10**6) # полоса частот
+N_0 = -174
+B = 20*(10**6)
 d = 500
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
@@ -258,11 +258,11 @@ plt.ylabel('shennon_speed')
 plt.legend()
 plt.show()
 
-P_t = 23 # мощность в дБм передатчика
-G_t, G_r = 10, 10 # усиление дБ на приеме и передаче
-N_0 = np.linspace(170, 500, 50) # тепловой шум в дБм
+P_t = 23
+G_t, G_r = 10, 10
+N_0 = np.linspace(170, 500, 50)
 N_0 = -1*N_0
-B = 20*(10**6) # полоса частот
+B = 20*(10**6)
 d = 500
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
