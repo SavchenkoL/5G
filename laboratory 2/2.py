@@ -224,7 +224,7 @@ pwr_28000, snr_28000 = prd(G_r, G_t, P_t, d, f[2], N_0, B)
 
 shennon_speed_900 = shennon_speed(linear(snr_900), B)
 shennon_speed_1900 = shennon_speed(linear(snr_1900), B)
-shennon_speed_28000 = shennon_speed(linear(snr_28000), B)
+shennon_speed_28000 = shennon_speed(linear(snr_28000), B) #**
 
 plt.figure(figsize=(10,8))
 plt.plot(P_t, shennon_speed_900, label='При f = 900 МГц')
