@@ -171,7 +171,7 @@ plt.ylabel("G")
 plt.legend()
 plt.show()
 
-plt.figure(figsize=(10,8))
+plt.figure(figsize=(10,8)) #
 plt.plot(N, G2_k1, label=f'потери на заднем и боковых лепестках, k={k1}')
 plt.plot(N, G2_k2, label=f'потери на заднем и боковых лепестках, k={k2}')
 plt.plot(N, G2_k3, label=f'потери на заднем и боковых лепестках, k={k3}')
