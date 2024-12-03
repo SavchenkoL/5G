@@ -262,8 +262,7 @@ P_t = 23
 G_t, G_r = 10, 10
 N_0 = np.linspace(170, 500, 50)
 N_0 = -1*N_0
-B = 20*(10**6)
-d = 500
+B = 20*(10**6)d = 500
 
 pwr_900, snr_900 = prd(G_r, G_t, P_t, d, f[0], N_0, B)
 pwr_1900, snr_1900 = prd(G_r, G_t, P_t, d, f[1], N_0, B)
