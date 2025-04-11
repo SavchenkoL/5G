@@ -83,9 +83,6 @@ B_ = 10 * 10**6
 R = coverage_radius()
 print(f"max radius covering: {R:.2f} m")
 
-R_=shannon(R,B_)
-print(f"speed  over distance R: {R_/10**6:.2f} mbit/c")
-
 R_10=shannon(R/10,B_)
 print(f"speed  over distance R/10: {R_10/10**6:.2f} mbit/c")
 
